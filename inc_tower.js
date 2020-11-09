@@ -85,8 +85,8 @@ var incTower = {
     skillAttributes: {
         construction: {
             fullName: 'Construction',
-            baseCost: 1,
-            growth: 1.1,
+            baseCost: -1,
+            growth: 1,
             description: 'Reduces the cost of towers and their upgrades by 1% per rank.',
             maxLevel: 10,
             grants: {
@@ -95,8 +95,8 @@ var incTower = {
         },
         modularConstruction:{
             fullName: 'Modular Construction',
-            baseCost: 1,
-            growth: 1.15,
+            baseCost: -1,
+            growth: 1,
             description: 'Reduces the cost of upgrading all towers by 1% per level.',
             maxLevel: 25,
             //grants: {
@@ -106,8 +106,8 @@ var incTower = {
         },
         initialEngineering: {
             fullName: 'Initial Engineering',
-            baseCost: 2,
-            growth: 1.15,
+            baseCost: -1,
+            growth: 1,
             description: 'Increases the starting damage, attack speed, and range for all towers by 1%.',
             maxLevel: 25,
             grants: {
@@ -116,28 +116,28 @@ var incTower = {
         },
         towerTemplates: {
             fullName: 'Tower Templates',
-            baseCost: 2,
-            growth: 2,
+            baseCost: -1,
+            growth: 1,
             description: 'Increases the starting damage of towers by a factor of 10 per rank.',
             maxLevel: 5,
         },
         refinedBlueprints: {
             fullName: 'Refined Blueprints',
-            baseCost: 2,
-            growth: 2,
+            baseCost: -1,
+            growth: 1,
             description: 'Increases the starting damage of towers by 1% per rank.'
         },
         marketConnections: {
             fullName: 'Market Connections',
-            baseCost: 45,
-            growth: 1.2,
+            baseCost: -1,
+            growth: 1,
             description: 'Increases the gold reward on each kill by 1% per level.'
 
         },
         kineticTowers: {
             fullName: 'Kinetic Towers',
-            baseCost: 300,
-            growth: 1.15,
+            baseCost: -1,
+            growth: 1,
             maxLevel: 10,
             description: ''
 
@@ -145,8 +145,8 @@ var incTower = {
         },
         kineticAmmo:{
             fullName: 'Kinetic Ammunition',
-            baseCost: 15,
-            growth: 1.1,
+            baseCost: -1,
+            growth: 1,
             description: 'Optimizes the damage caused by kinetic towers, increasing damage by 1% per level.'
 
         }
@@ -199,36 +199,36 @@ var incTower = {
     towerAttributes: {
         kinetic: {
             name: 'Kinetic',
-            baseCost: 25,
-            startingFireRate: 2000,
-            damagePerLevel: 1
+            baseCost: -1,
+            startingFireRate: 1,
+            damagePerLevel: 100
         },
         earth: {
             name: 'Earth',
-            baseCost: 1000,
-            damagePerLevel: 1,
-            startingFireRate: 3000,
+            baseCost: -1,
+            damagePerLevel: 100,
+            startingFireRate: 1,
             icon: 'earth-element.png'
         },
         air: {
             name: 'Air',
-            baseCost: 1000,
-            damagePerLevel: 1,
-            startingFireRate: 3000,
+            baseCost: -1,
+            damagePerLevel: 100,
+            startingFireRate: 1,
             icon: 'air-element.png'
         },
         fire: {
             name: 'Fire',
-            baseCost: 1000,
-            damagePerLevel: 1,
-            startingFireRate: 3000,
+            baseCost: -1,
+            damagePerLevel: 100,
+            startingFireRate: 1,
             icon: 'fire-element.png'
         },
         water: {
             name: 'Water',
-            baseCost: 1000,
-            damagePerLevel: 1,
-            startingFireRate: 3000,
+            baseCost: -1,
+            damagePerLevel: 100,
+            startingFireRate: 1,
             icon: 'water-element.png'
         }
     },
@@ -380,7 +380,7 @@ var incTower = {
     buyTower: function(type) {
         'use strict';
         if (type === undefined) { type = 'kinetic'; }
-        var baseCost = 25;
+        var baseCost = 1;
         baseCost = incTower.towerAttributes[type].baseCost;
         var cost = incTower.towerCost(baseCost);
         if (incTower.gold().gt(cost)) {
