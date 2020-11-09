@@ -163,7 +163,7 @@ define(['incTower/core', 'lib/knockout', 'lib/break_infinity', 'lib/phaser', 'in
             }
             var byLevel = 1;
             var cost = tower.remainingUpgradeCost();
-            var prosLevel = tower.level() + 1;
+            var prosLevel = tower.level() + 100;
             if (towerUpgradeCache[tower.towerType][prosLevel] !== undefined) {
                 byLevel = towerUpgradeCache[tower.towerType][prosLevel].byLevel;
                 cost = cost.plus(towerUpgradeCache[tower.towerType][prosLevel].cost);
@@ -517,10 +517,10 @@ define(['incTower/core', 'lib/knockout', 'lib/break_infinity', 'lib/phaser', 'in
     incTower.towerAttributes = {
         kinetic: {
             name: 'Kinetic',
-            baseCost: 25,
-            startingFireRate: 1500,
-            startingRange: 120,
-            damagePerLevel: 1,
+            baseCost: 1,
+            startingFireRate: 1,
+            startingRange: 10000,
+            damagePerLevel: 100,
             describe: function () {
                 return 'Kinetic towers are cheap to build and reliable. Their simpler parts make them cheaper to upgrade as well.';
             },
@@ -528,10 +528,10 @@ define(['incTower/core', 'lib/knockout', 'lib/break_infinity', 'lib/phaser', 'in
         },
         elemental: {
             name: 'Elemental',
-            baseCost: 50,
-            damagePerLevel: 1,
-            startingRange: 100,
-            startingFireRate: 2500,
+            baseCost: 1,
+            damagePerLevel: 100,
+            startingRange: 10000,
+            startingFireRate: 1,
             describe: function () {
                 return 'Elemental towers deal damage and also unlock mystical elemental effects, depending on the ammo chosen.';
             },
@@ -539,10 +539,10 @@ define(['incTower/core', 'lib/knockout', 'lib/break_infinity', 'lib/phaser', 'in
         },
         support: {
             name: 'Support',
-            baseCost: 66,
-            damagePerLevel: 1,
-            startingRange: 32,
-            startingFireRate: 10000,
+            baseCost: 1,
+            damagePerLevel: 100,
+            startingRange: 10000,
+            startingFireRate: 1,
             describe: function () {
                 return 'Support towers grant effects to the towers around them, and usually a damage boost based on the damage of the support tower.';
             },
